@@ -1,0 +1,20 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           @controllers.Authentication.get()
+POST    /                           @controllers.Authentication.legacyLogin()
+
+GET     /dashboard                  @controllers.Application.get()
+GET     /contact                    @controllers.Application.contactPage()
+POST    /contact                    @controllers.Application.contactComplete()
+GET     /about                      @controllers.Application.aboutPage()
+GET     /rent                       @controllers.Application.rentPage()
+GET     /crud                       @controllers.Application.crudPage()
+
+#POST    /captcha                    @controllers.Application.captcha()
+GET     /captcha                    @controllers.Application.captcha(movieName : Blob)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

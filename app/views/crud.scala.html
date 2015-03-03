@@ -1,0 +1,46 @@
+@import com.sofi.models.Movie
+
+@(mov: List[Movie], myForm : Form[AddMovieForm])
+
+@import helper._
+@import models.AddMovieForm
+
+@main("test"){
+    <h1>Crud</h1>
+
+    @for(a<-mov) {
+        <div class='movieContainer'>
+            <img src='@routes.Application.captcha(a.getId())'>
+            <div class='containter'>
+                <h1>@a.getName()</h1>
+            </div>
+            <div class='containter'>
+                <p class='description'>@a.getDescription()</p>
+            </div>
+            <div class='container'>
+                <p class='runLength'>@a.getRunLength()</p>
+                <p class='rating'>@a.getRating()</p>
+            </div>
+            <div class='container'>
+                @if(a.getIsRented()){
+                    <p class='smallInctiveText'>Rented</p>
+                }else {
+                    <p class='smallActiveText'>Available</p>
+                }
+                <a href='@routes.Application.removeMovie(a.getId())' class='mallActiveText'>Delete</a>
+            </div>
+        </div>
+    }
+
+    <div class='movieContainer'>
+        <img src='@routes.Assets.at("images/movie_add.png")' />
+        @form(routes.Application.addMovie) {
+            @inputText(myForm("name"));
+            @inputText(myForm("description"));
+            @inputText(myForm("rating"));
+            @inputText(myForm("runLength"));
+            @inputFile(myForm("movieImage"));
+            <button type="submit">Add Movie</button>
+        }
+    </div>
+}

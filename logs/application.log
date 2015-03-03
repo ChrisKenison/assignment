@@ -1,0 +1,56 @@
+2015-03-03 16:21:30,304 - [INFO] - from play in pool-4-thread-4 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9001
+
+2015-03-03 16:21:45,126 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost/sofi
+
+2015-03-03 16:21:45,264 - [ERROR] - from Global OnStart in play-internal-execution-context-1 
+onStart
+
+2015-03-03 16:21:45,444 - [INFO] - from org.springframework.context.annotation.AnnotationConfigApplicationContext in play-internal-execution-context-1 
+Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@6de900f5: startup date [Tue Mar 03 16:21:45 MST 2015]; root of context hierarchy
+
+2015-03-03 16:21:46,123 - [INFO] - from org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean in play-internal-execution-context-1 
+Building JPA container EntityManagerFactory for persistence unit 'default'
+
+2015-03-03 16:21:46,149 - [INFO] - from org.hibernate.jpa.internal.util.LogHelper in play-internal-execution-context-1 
+HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+
+2015-03-03 16:21:46,234 - [INFO] - from org.hibernate.Version in play-internal-execution-context-1 
+HHH000412: Hibernate Core {4.3.6.Final}
+
+2015-03-03 16:21:46,235 - [INFO] - from org.hibernate.cfg.Environment in play-internal-execution-context-1 
+HHH000206: hibernate.properties not found
+
+2015-03-03 16:21:46,237 - [INFO] - from org.hibernate.cfg.Environment in play-internal-execution-context-1 
+HHH000021: Bytecode provider name : javassist
+
+2015-03-03 16:21:46,502 - [INFO] - from org.hibernate.annotations.common.Version in play-internal-execution-context-1 
+HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+
+2015-03-03 16:21:46,576 - [INFO] - from org.hibernate.dialect.Dialect in play-internal-execution-context-1 
+HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+
+2015-03-03 16:21:46,702 - [INFO] - from org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory in play-internal-execution-context-1 
+HHH000397: Using ASTQueryTranslatorFactory
+
+2015-03-03 16:21:46,769 - [INFO] - from org.hibernate.validator.internal.util.Version in play-internal-execution-context-1 
+HV000001: Hibernate Validator 5.0.3.Final
+
+2015-03-03 16:21:47,689 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-03-03 16:21:47,985 - [INFO] - from akka.event.slf4j.Slf4jLogger in play-akka.actor.default-dispatcher-2 
+Slf4jLogger started
+
+2015-03-03 16:21:48,087 - [DEBUG] - from application in play-akka.actor.default-dispatcher-2 
+Creating user
+
+2015-03-03 16:21:48,087 - [INFO] - from application in play-akka.actor.default-dispatcher-2 
+Starting Login
+
+2015-03-03 16:21:54,999 - [DEBUG] - from application in play-akka.actor.default-dispatcher-7 
+null
+

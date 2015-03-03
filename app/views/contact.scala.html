@@ -1,0 +1,18 @@
+@(myForm: Form[LegacyContactForm])
+
+@import helper.inputText
+@import helper._
+@import models.LegacyContactForm
+
+
+@main("Contact"){
+    <h1>Contact</h1>
+    
+    <div class='container'>
+        @form(routes.Application.contactComplete){
+            @inputText(myForm("name"))
+            @inputText(myForm("email"))
+            <button type="submit">Send Message</button>
+        }
+    </div>
+}

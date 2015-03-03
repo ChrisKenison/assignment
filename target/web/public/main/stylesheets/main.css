@@ -1,0 +1,80 @@
+html{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    background-color:#EBF5FF;
+}
+#header{
+    width:100%;
+    height: 200px;
+    background-color:#CCE0FF;
+    margin: 0px;
+    padding: 0px;
+}
+nav{
+    width: 50%;
+    margin: 0px auto;
+    padding: 90px 0px 0px 0px;
+}
+nav a{
+    padding: 0px 0px 0px 50px;
+}
+nav a:link {
+    color: white;
+}
+nav a:hover {
+    color: red;
+}
+nav a:visited {
+    color: white;
+}
+#content{
+    margin: 0px auto 0px auto;
+    padding: 0px 0px 0px 0px;
+    width: 70%;
+    height: 100%;
+}
+.container{
+    background-color: pink;
+    margin: 0px;
+    padding: 0px;
+}
+.movieContainer{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 210px;
+}
+.movieContainer img{
+    float: left;
+    height: 200px;
+    width: 200px;
+    margin: 0px 100px 0px 0px;
+}
+.movieContainer h1{
+    font-family: Helvetica, "Times New Roman", Times, serif;
+    font-size: 30px;
+    margin: 0px;
+    padding: 0px;
+    float: clear;
+}
+
+.description{
+    margin: 20px 0px 20px 0px;
+    font-size: 18px;
+}
+.runLength{
+}a
+.rating{
+}
+.smallInactiveText{
+    float: clear;
+    color: grey;
+}
+.smallActiveText{
+    float: both;
+    color: blue;
+}

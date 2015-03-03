@@ -1,0 +1,19 @@
+@(logForm: Form[LegacyLoginForm])
+
+@import helper.inputText
+@import helper.inputPassword
+@import helper._
+@import models.LegacyLoginForm
+
+@main("Login"){
+    <h1>TESTING</h1>
+
+    <p>Please login:</p>
+    <div class='containter'>
+         @form(routes.Authentication.legacyLogin){
+             @inputText(logForm("username"))
+             @inputPassword(logForm("password"))
+             <button class="btn btn-primary btn-maincta" type="submit">Sign In</button>
+         }
+    </div>
+}

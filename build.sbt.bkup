@@ -1,0 +1,44 @@
+name := """assignment"""
+
+version := "1.0-SNAPSHOT"
+
+lazy val root = (project in file(".")).enablePlugins(PlayJava)
+
+scalaVersion := "2.11.1"
+
+libraryDependencies ++= Seq(
+  javaJdbc,
+  javaEbean,
+  cache,
+  javaWs,
+  "com.newrelic.agent.java" % "newrelic-api" % "3.9.0",
+  "com.sofi" %  "sofi-data-access-jpa"      % "release-125" intransitive(),
+  "com.newrelic.agent.java" % "newrelic-api" % "3.9.0",
+  "com.sofi" %  "sofi-data-access-jpa"      % "release-125" intransitive(),
+  "com.sofi" %  "sofi-experian-integration" % "release-22"  intransitive(),
+"com.sofi" %  "sofi-docs-generation"      % "release-16"  intransitive(),
+"com.sofi" %  "sofi-filestore"            % "release-14"  intransitive(),
+"com.sofi" %  "sofi-finance-utils"        % "release-15"  intransitive(),
+"com.sofi" %  "sofi-ncs-integration"      % "release-17"  intransitive(),
+"com.sofi" %  "sofi-reporting"            % "release-6"   intransitive(),
+"com.sofi" %  "sofi-underwriting"         % "release-45"  intransitive(),
+"com.sofi" %  "sofi-user-tracking-api"    % "release-69",
+"com.sofi" %  "sofi-utils"                % "release-26"  intransitive(),
+"com.sofi" %  "sofi-workflow"             % "release-107"  intransitive(),
+"com.google.code.maven-play-plugin.org.allcolor.yahp" % "yahp" % "1.3",
+"com.google.code.maven-play-plugin.org.allcolor.yahp" % "yahp-internal" % "1.3" exclude("log4j", "log4j"),
+"org.eclipse.birt.runtime" % "org.eclipse.birt.runtime" % "4.2.0" exclude("org.eclipse.birt.runtime.3_7_1", "org.apache.batik.pdf"),
+"org.eclipse.birt.runtime.3_7_1" % "org.apache.batik.pdf" % "1.6.0" % "runtime",
+"org.eclipse.birt.report.engine" % "emitter.csv" % "1.0.0.201110121016",
+"uk.co.techblue" % "docusign-restclient-core" % "1.0.4-SOFI" intransitive(),
+"uk.co.techblue" % "docusign-restclient-dto"  % "1.0.4-SOFI" intransitive(),
+  "org.hibernate" % "hibernate-entitymanager" % "4.3.6.Final",
+  "org.springframework" % "spring-aop"        % "4.1.1.RELEASE",
+  "org.springframework" % "spring-context"    % "4.1.1.RELEASE",
+  "org.springframework" % "spring-expression" % "4.1.1.RELEASE",
+  "org.springframework" % "spring-jdbc"       % "4.1.1.RELEASE",
+  "org.springframework" % "spring-orm"        % "4.1.1.RELEASE",
+  "org.springframework" % "spring-tx"         % "4.1.1.RELEASE",
+  "org.springframework" % "spring-test"       % "4.1.1.RELEASE" % "test",
+  "mysql" % "mysql-connector-java" % "5.1.32"
+)

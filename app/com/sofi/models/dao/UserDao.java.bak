@@ -1,0 +1,65 @@
+package com.sofi.models.dao;
+
+import com.sofi.models.User;
+import com.sofi.models.EntityManagerProvider;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Lazy(true)
+@Repository
+public class UserDao extends GenericDao<User> {
+
+    @Autowired
+    public UserDao(EntityManagerProvider provider) {
+        super(provider);
+    }
+
+    public User createUser(String username,
+                           String email, 
+                           String password,
+                           String address1,
+                           String address2,
+                           String city,
+                           String zip,
+                           String state) {
+        User user = new User(username, email, password);
+        user.setAddress1(address1);
+        user.setAddress2(address2);
+        user.setCity(city);
+        user.setZip(zip);
+        user.setState(state);
+        save(user);
+
+        return user;
+    }
+
+    public User createUser(String username,
+                           String email,
+                           String password) {
+        User user = new User(username, email, password);
+        save(user);
+
+        return user;
+    }
+
+    public User findUserByUsername(String username) {
+        return first(provider.em().createQuery("select u from User u where u.username = :username", User.class)
+            .setParameter("username", username));
+    }
+
+    public User findUserByEmail(String email) {
+        return first(provider.em().createQuery("select u from User u where u.email = :email", User.class)
+            .setParameter("email", email));
+    }
+
+
+
+
+
+
+
+}

@@ -1,0 +1,82 @@
+name := """sofi-operator-app"""
+
+version := "1.0-SNAPSHOT"
+
+scalaVersion := "2.10.4"
+
+resolvers ++= Seq(
+  // HikariCP DB plugin
+  Resolver.url("Edulify Repository", url("http://edulify.github.io/modules/releases/"))(Resolver.ivyStylePatterns),
+  // Scribe dependency (used by Pac4J)
+  "scribe repo" at "https://raw.github.com/fernandezpablo85/scribe-java/mvn-repo/",
+  // Used by the Play-Redis plugin
+  "pk11 repo" at "http://pk11-scratch.googlecode.com/svn/trunk"
+)
+
+libraryDependencies ++= Seq(
+  cache,
+  filters,
+  javaCore,
+  javaJdbc,
+  javaWs,
+  "com.newrelic.agent.java" % "newrelic-api" % "3.9.0",
+  "com.sofi" %  "sofi-data-access-jpa"      % "release-125" intransitive(),
+  "com.sofi" %  "sofi-experian-integration" % "release-22"  intransitive(),
+  "com.sofi" %  "sofi-docs-generation"      % "release-16"  intransitive(),
+  "com.sofi" %  "sofi-filestore"            % "release-14"  intransitive(),
+  "com.sofi" %  "sofi-finance-utils"        % "release-15"  intransitive(),
+  "com.sofi" %  "sofi-ncs-integration"      % "release-17"  intransitive(),
+  "com.sofi" %% "sofi-referral-integration" % "release-7",
+  "com.sofi" %  "sofi-reporting"            % "release-6"   intransitive(),
+  "com.sofi" %% "sofi-service-discovery"    % "release-11",
+  "com.sofi" %  "sofi-underwriting"         % "release-45"  intransitive(),
+  "com.sofi" %  "sofi-user-tracking-api"    % "release-69",
+  "com.sofi" %  "sofi-utils"                % "release-26"  intransitive(),
+  "com.sofi" %  "sofi-workflow"             % "release-107"  intransitive(),
+  "com.google.code.maven-play-plugin.org.allcolor.yahp" % "yahp" % "1.3",
+  "com.google.code.maven-play-plugin.org.allcolor.yahp" % "yahp-internal" % "1.3" exclude("log4j", "log4j"),
+  "org.eclipse.birt.runtime" % "org.eclipse.birt.runtime" % "4.2.0" exclude("org.eclipse.birt.runtime.3_7_1", "org.apache.batik.pdf"),
+  "org.eclipse.birt.runtime.3_7_1" % "org.apache.batik.pdf" % "1.6.0" % "runtime",
+  "org.eclipse.birt.report.engine" % "emitter.csv" % "1.0.0.201110121016",
+  "uk.co.techblue" % "docusign-restclient-core" % "1.0.4-SOFI" intransitive(),
+  "uk.co.techblue" % "docusign-restclient-dto"  % "1.0.4-SOFI" intransitive(),
+  "org.jboss.resteasy" % "resteasy-jaxrs"              % "2.3.7.Final",
+  "org.jboss.resteasy" % "resteasy-jackson-provider"   % "2.3.7.Final",
+  "org.jboss.resteasy" % "resteasy-multipart-provider" % "2.3.7.Final",
+  "org.hibernate" % "hibernate-entitymanager" % "4.3.6.Final",
+  "org.springframework" % "spring-aop"        % "4.1.1.RELEASE",
+  "org.springframework" % "spring-context"    % "4.1.1.RELEASE",
+  "org.springframework" % "spring-expression" % "4.1.1.RELEASE",
+  "org.springframework" % "spring-jdbc"       % "4.1.1.RELEASE",
+  "org.springframework" % "spring-orm"        % "4.1.1.RELEASE",
+  "org.springframework" % "spring-tx"         % "4.1.1.RELEASE",
+  "org.springframework" % "spring-test"       % "4.1.1.RELEASE" % "test",
+  "org.springframework.data" % "spring-data-redis" % "1.0.1.RELEASE" exclude("log4j", "log4j") exclude("org.slf4j", "slf4j-log4j12"),
+  "com.typesafe.play.plugins" %% "play-plugins-redis" % "2.3.0",
+  "org.pac4j" % "play-pac4j_java" % "1.3.0",
+  "org.pac4j" % "pac4j-oauth" % "1.6.0",
+  "org.apache.commons" % "commons-email" % "1.3.2",
+  "com.edulify" %% "play-hikaricp" % "1.5.1",
+  "org.apache.pdfbox" % "pdfbox" % "1.7.0",
+  "org.apache.velocity" % "velocity" % "1.7",
+  "org.bouncycastle" % "bcpg-jdk15" % "1.46",
+  "org.codehaus.jackson" % "jackson-mapper-asl" % "1.9.13",
+  "org.joda" % "joda-money" % "0.6",
+  "com.lowagie" % "itext" % "2.1.7",
+  "commons-beanutils" % "commons-beanutils" % "1.8.3",
+  "commons-codec" % "commons-codec" % "1.8",
+  "commons-io" % "commons-io" % "2.2",
+  "com.google.code.gson" % "gson" % "2.2.3",
+  "com.github.philvarner" % "clamavj" % "0.2",
+  "mysql" % "mysql-connector-java" % "5.1.32",
+  "net.sf.opencsv" % "opencsv" % "2.3",
+  "redis.clients" % "jedis" % "2.1.0",
+  "de.bripkens" % "gravatar4java" % "1.1",
+  "org.slf4j" % "log4j-over-slf4j" % "1.7.7",
+  "ch.qos.logback.contrib" % "logback-json-core"    % "0.1.2" % "runtime",
+  "ch.qos.logback.contrib" % "logback-json-classic" % "0.1.2" % "runtime",
+  "ch.qos.logback.contrib" % "logback-jackson"      % "0.1.2" % "runtime",
+  "com.h2database" % "h2" % "1.3.168" % "test",
+  "org.mockito" % "mockito-all" % "1.9.5" % "test",
+  "junit" % "junit" % "4.11" % "test"
+)
